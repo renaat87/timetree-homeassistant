@@ -7,5 +7,5 @@
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/renaat87/timetree-homeassistant/issues",
   "requirements": [],
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

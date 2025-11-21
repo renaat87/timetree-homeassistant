@@ -8,6 +8,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from homeassistant.util import dt as dt_util
 
 from .const import DOMAIN, CONF_CALENDAR_NAME, CONF_CALENDAR_ID
 
@@ -45,7 +46,7 @@ class TimeTreeCalendarEntity(CoordinatorEntity, CalendarEntity):
         if not self.coordinator.data:
             return None
 
-        now = datetime.now()
+        now = dt_util.now()
         upcoming_events = [
             event for event in self.coordinator.data
             if self._get_event_end(event) >= now
@@ -101,16 +102,16 @@ class TimeTreeCalendarEntity(CoordinatorEntity, CalendarEntity):
         start = event.get("start")
         if isinstance(start, datetime):
             return start
-        # Handle date objects (all-day events)
-        return datetime.combine(start, datetime.min.time())
+        # Handle date objects (all-day events) - convert to datetime with timezone
+        return dt_util.start_of_local_day(datetime.combine(start, datetime.min.time()))
 
     def _get_event_end(self, event: dict[str, Any]) -> datetime:
         """Get event end as datetime."""
         end = event.get("end")
         if isinstance(end, datetime):
             return end
-        # Handle date objects (all-day events)
-        return datetime.combine(end, datetime.max.time())
+        # Handle date objects (all-day events) - convert to datetime with timezone
+        return dt_util.start_of_local_day(datetime.combine(end, datetime.max.time()))
 
     @property
     def available(self) -> bool:
