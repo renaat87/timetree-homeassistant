@@ -11,9 +11,49 @@ A custom Home Assistant integration that syncs your TimeTree calendars with Home
 - 🌍 Support for all-day events and timezones
 - 📍 Location and description support
 
+## Quick Reference
+
+**GitHub Repository**: `https://github.com/renaat87/timetree-homeassistant`  
+*(Replace `YOUR_USERNAME` with your actual GitHub username after uploading)*
+
+**HACS Installation**: Add as custom repository → Download → Configure  
+**Manual Installation**: Copy to `custom_components/timetree` → Restart → Configure
+
 ## Installation
 
-### Manual Installation
+### Method 1: HACS (Recommended)
+
+[HACS](https://hacs.xyz/) (Home Assistant Community Store) makes it easy to install and update custom integrations.
+
+#### Prerequisites
+- HACS must be installed in your Home Assistant instance
+- Your GitHub repository must be public
+
+#### Steps
+
+1. **Add Custom Repository to HACS**
+   - Open Home Assistant
+   - Go to **HACS** in the sidebar
+   - Click on **Integrations**
+   - Click the **three dots menu** (⋮) in the top right corner
+   - Select **Custom repositories**
+   - In the dialog:
+     - **Repository**: Enter your GitHub repository URL (e.g., `https://github.com/renaat87/timetree-homeassistant`)
+     - **Category**: Select **Integration**
+   - Click **Add**
+
+2. **Install the Integration**
+   - In HACS, search for "TimeTree Calendar"
+   - Click on the integration
+   - Click **Download**
+   - Restart Home Assistant
+
+3. **Configure the Integration**
+   - Go to **Settings** → **Devices & Services** → **Add Integration**
+   - Search for "TimeTree Calendar" and click on it
+   - Follow the configuration steps below
+
+### Method 2: Manual Installation
 
 1. Copy the `custom_components/timetree` directory to your Home Assistant `config/custom_components/` directory.
 
