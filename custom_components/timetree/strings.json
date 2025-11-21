@@ -1,0 +1,32 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "TimeTree Calendar Setup",
+                "description": "Enter your TimeTree credentials to connect your calendar.",
+                "data": {
+                    "email": "Email",
+                    "password": "Password"
+                }
+            },
+            "calendar": {
+                "title": "Select Calendar",
+                "description": "Choose which TimeTree calendar to sync and set the update interval.",
+                "data": {
+                    "calendar_id": "Calendar",
+                    "update_interval": "Update Interval"
+                }
+            }
+        },
+        "error": {
+            "authentication_failed": "Invalid email or password",
+            "cannot_connect": "Cannot connect to TimeTree. Please check your internet connection.",
+            "no_calendars": "No active calendars found in your TimeTree account",
+            "calendar_not_found": "Selected calendar not found",
+            "unknown_error": "An unexpected error occurred"
+        },
+        "abort": {
+            "already_configured": "This calendar is already configured"
+        }
+    }
+}
