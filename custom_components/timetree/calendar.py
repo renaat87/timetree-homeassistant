@@ -101,6 +101,9 @@ class TimeTreeCalendarEntity(CoordinatorEntity, CalendarEntity):
         """Get event start as datetime."""
         start = event.get("start")
         if isinstance(start, datetime):
+            # Ensure timezone-aware datetime
+            if start.tzinfo is None:
+                return dt_util.as_local(start)
             return start
         # Handle date objects (all-day events) - convert to datetime with timezone
         return dt_util.start_of_local_day(datetime.combine(start, datetime.min.time()))
@@ -109,6 +112,9 @@ class TimeTreeCalendarEntity(CoordinatorEntity, CalendarEntity):
         """Get event end as datetime."""
         end = event.get("end")
         if isinstance(end, datetime):
+            # Ensure timezone-aware datetime
+            if end.tzinfo is None:
+                return dt_util.as_local(end)
             return end
         # Handle date objects (all-day events) - convert to datetime with timezone
         return dt_util.start_of_local_day(datetime.combine(end, datetime.max.time()))
