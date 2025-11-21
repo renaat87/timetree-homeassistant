@@ -14,7 +14,6 @@ A custom Home Assistant integration that syncs your TimeTree calendars with Home
 ## Quick Reference
 
 **GitHub Repository**: `https://github.com/renaat87/timetree-homeassistant`  
-*(Replace `YOUR_USERNAME` with your actual GitHub username after uploading)*
 
 **HACS Installation**: Add as custom repository → Download → Configure  
 **Manual Installation**: Copy to `custom_components/timetree` → Restart → Configure
@@ -27,7 +26,6 @@ A custom Home Assistant integration that syncs your TimeTree calendars with Home
 
 #### Prerequisites
 - HACS must be installed in your Home Assistant instance
-- Your GitHub repository must be public
 
 #### Steps
 
