@@ -26,7 +26,6 @@ A custom Home Assistant integration that syncs your TimeTree calendars with Home
 
 #### Prerequisites
 - HACS must be installed in your Home Assistant instance
-- Your GitHub repository must be public
 
 #### Steps
 
