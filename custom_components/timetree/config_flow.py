@@ -133,9 +133,9 @@ class TimeTreeConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                         CONF_PASSWORD: self.password,
                         CONF_CALENDAR_ID: int(calendar_id),
                         CONF_CALENDAR_NAME: calendar_name,
-                        CONF_UPDATE_INTERVAL: user_input.get(
-                            CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL
-                        ),
+                        CONF_UPDATE_INTERVAL: int(user_input.get(
+                            CONF_UPDATE_INTERVAL, str(DEFAULT_UPDATE_INTERVAL)
+                        )),
                     },
                 )
             else:
